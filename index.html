@@ -3,19 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Singularity by Motion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       background: #fff;
       color: #000;
     }
+    header {
+      text-align: center;
+      padding: 5rem 2rem;
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
     nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #000;
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 3rem;
       padding: 1rem;
-      border-bottom: 1px solid #000;
+      z-index: 1000;
     }
     nav a {
       text-decoration: none;
@@ -27,42 +40,46 @@
       color: #555;
     }
     section {
-      padding: 2rem;
-      text-align: center;
-      animation: fadeIn 1s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
     }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    .services ul {
-      list-style: none;
-      padding: 0;
+    .icon {
+      width: 200px;
+      height: 200px;
+      background: #000;
+      margin: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
       font-size: 1.2rem;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
-    .services li {
-      margin: 1rem 0;
+    .icon:hover {
+      transform: scale(1.1);
+      background: #333;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Singularity by Motion</h1>
-  </header>
   <nav>
     <a href="#services">Услуги</a>
     <a href="#about">Обо мне</a>
+    <a href="#contacts">Контакты</a>
   </nav>
 
-  <section id="services" class="services">
+  <header>Singularity by Motion</header>
+
+  <section id="services">
     <h2>Услуги</h2>
-    <ul>
-      <li>2D Motion Designer</li>
-      <li>Анимация логотипов</li>
-      <li>Профессиональный монтаж</li>
-      <li>Рекламные анимации</li>
-      <li>Анимации презентаций к событиям</li>
-    </ul>
+    <div class="icon">Рекламная анимация</div>
+    <div class="icon">Анимация логотипов</div>
+    <div class="icon">Профессиональный монтаж</div>
+    <div class="icon">Анимации презентаций</div>
   </section>
 
   <section id="about">
@@ -70,8 +87,9 @@
     <p>Здесь мы позже добавим информацию о тебе.</p>
   </section>
 
-  <footer>
-    <p>© 2026 Singularity by Motion</p>
-  </footer>
+  <section id="contacts">
+    <h2>Контакты</h2>
+    <p>Напиши сюда свои контактные данные.</p>
+  </section>
 </body>
 </html>
