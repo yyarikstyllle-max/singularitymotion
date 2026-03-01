@@ -1,95 +1,219 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Singularity by Motion</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Space Grotesk', sans-serif;
-      background: #fff;
-      color: #000;
-    }
-    header {
-      text-align: center;
-      padding: 5rem 2rem;
-      font-size: 4rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #fff;
-      border-bottom: 1px solid #000;
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      padding: 1rem;
-      z-index: 1000;
-    }
-    nav a {
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #555;
-    }
-    section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-    }
-    .icon {
-      width: 200px;
-      height: 200px;
-      background: #000;
-      margin: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 1.2rem;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-    .icon:hover {
-      transform: scale(1.1);
-      background: #333;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Singularity by Emotion</title>
+
+<!-- Красивый шрифт -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #111;
+    overflow-x: hidden;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+nav h1 {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.4;
+}
+
+section {
+    min-height: 100vh;
+    padding: 150px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero {
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1.2;
+    max-width: 900px;
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 80px;
+    margin-top: 80px;
+}
+
+.icon-box {
+    text-align: center;
+    padding: 60px;
+    border: 1px solid #eee;
+    transition: 0.4s;
+    position: relative;
+}
+
+.icon-box:hover {
+    background: #111;
+    color: white;
+}
+
+.icon-box span {
+    font-size: 80px;
+    color: #ccc;
+    transition: 0.4s;
+}
+
+.icon-box:hover span {
+    color: white;
+}
+
+.icon-title {
+    margin-top: 20px;
+    opacity: 0;
+    transition: 0.4s;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.icon-box:hover .icon-title {
+    opacity: 1;
+}
+
+/* Галерея */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.gallery img, .gallery video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Кастомный курсор */
+.cursor {
+    width: 20px;
+    height: 20px;
+    background: black;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+}
+</style>
 </head>
+
 <body>
-  <nav>
-    <a href="#services">Услуги</a>
-    <a href="#about">Обо мне</a>
-    <a href="#contacts">Контакты</a>
-  </nav>
 
-  <header>Singularity by Motion</header>
+<div class="cursor"></div>
 
-  <section id="services">
+<nav>
+    <h1>Singularity by Emotion</h1>
+    <ul>
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#works">Работы</a></li>
+        <li><a href="#contact">Контакт</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    Singularity by Emotion — <br>
+    Motion Design & Visual Experience
+</section>
+
+<section id="services">
     <h2>Услуги</h2>
-    <div class="icon">Рекламная анимация</div>
-    <div class="icon">Анимация логотипов</div>
-    <div class="icon">Профессиональный монтаж</div>
-    <div class="icon">Анимации презентаций</div>
-  </section>
+    <div class="icons">
+        <div class="icon-box">
+            <span>◻</span>
+            <div class="icon-title">Анимация логотипа</div>
+        </div>
+        <div class="icon-box">
+            <span>◼</span>
+            <div class="icon-title">Рекламная анимация</div>
+        </div>
+        <div class="icon-box">
+            <span>⬛</span>
+            <div class="icon-title">Видео монтаж</div>
+        </div>
+    </div>
+</section>
 
-  <section id="about">
+<section id="works">
+    <h2>Работы</h2>
+    <p>Добавляй сюда свои файлы прямо в код:</p>
+
+    <div class="gallery">
+        <!-- Вставляй сюда свои работы -->
+        <!-- Пример: -->
+        <!-- <img src="images/work1.jpg"> -->
+        <!-- <video src="video/work.mp4" controls></video> -->
+    </div>
+</section>
+
+<section id="about">
     <h2>Обо мне</h2>
-    <p>Здесь мы позже добавим информацию о тебе.</p>
-  </section>
+    <p>
+        Я — Motion Designer. Создаю эмоциональную визуальную эстетику,
+        минималистичные и премиальные проекты.
+    </p>
+</section>
 
-  <section id="contacts">
-    <h2>Контакты</h2>
-    <p>Напиши сюда свои контактные данные.</p>
-  </section>
+<section id="contact">
+    <h2>Контакт</h2>
+    <p>Telegram: @yourusername</p>
+</section>
+
+<script>
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+</script>
+
 </body>
 </html>
