@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Singularity by Emotion</title>
 
-<!-- Красивый шрифт -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Красивый современный шрифт -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -17,7 +17,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #ffffff;
     color: #111;
     overflow-x: hidden;
@@ -31,14 +31,14 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(5px);
     z-index: 1000;
 }
 
 nav h1 {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 2px;
 }
 
@@ -56,78 +56,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    opacity: 0.4;
-}
-
-section {
-    min-height: 100vh;
-    padding: 150px 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.hero {
-    font-size: 60px;
-    font-weight: 300;
-    line-height: 1.2;
-    max-width: 900px;
-}
-
-.icons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 80px;
-    margin-top: 80px;
-}
-
-.icon-box {
-    text-align: center;
-    padding: 60px;
-    border: 1px solid #eee;
-    transition: 0.4s;
-    position: relative;
-}
-
-.icon-box:hover {
-    background: #111;
-    color: white;
-}
-
-.icon-box span {
-    font-size: 80px;
-    color: #ccc;
-    transition: 0.4s;
-}
-
-.icon-box:hover span {
-    color: white;
-}
-
-.icon-title {
-    margin-top: 20px;
-    opacity: 0;
-    transition: 0.4s;
-    font-size: 18px;
-    letter-spacing: 1px;
-}
-
-.icon-box:hover .icon-title {
-    opacity: 1;
-}
-
-/* Галерея */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: 40px;
-    margin-top: 60px;
-}
-
-.gallery img, .gallery video {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+    opacity: 0.5;
 }
 
 /* Кастомный курсор */
@@ -141,6 +70,129 @@ section {
     transform: translate(-50%, -50%);
     z-index: 2000;
 }
+
+section {
+    min-height: 100vh;
+    padding: 150px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section h2 {
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+    background: #eee;
+    border-radius: 3px;
+}
+
+/* Hero */
+.hero {
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1.2;
+    max-width: 900px;
+    margin-bottom: 80px;
+}
+
+/* Услуги */
+.services-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 40px;
+    padding-bottom: 20px;
+}
+
+.service-box {
+    flex: 0 0 300px;
+    padding: 60px;
+    background: #f8f8f8;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.4s;
+    position: relative;
+}
+
+.service-box:hover {
+    background: #111;
+    color: white;
+}
+
+.service-box span {
+    font-size: 60px;
+    display: block;
+    margin-bottom: 20px;
+    color: #ccc;
+    transition: 0.4s;
+}
+
+.service-box:hover span {
+    color: white;
+}
+
+.service-title {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Обо мне */
+#about p {
+    font-size: 18px;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+/* Галерея работ */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.gallery img, .gallery video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Сертификаты */
+.certificates {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.certificate-box {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    background: #f9f9f9;
+    transition: 0.3s;
+}
+
+.certificate-box:hover {
+    background: #111;
+    color: white;
+}
+
 </style>
 </head>
 
@@ -154,6 +206,7 @@ section {
         <li><a href="#about">Обо мне</a></li>
         <li><a href="#services">Услуги</a></li>
         <li><a href="#works">Работы</a></li>
+        <li><a href="#certificates">Сертификаты</a></li>
         <li><a href="#contact">Контакт</a></li>
     </ul>
 </nav>
@@ -165,29 +218,30 @@ section {
 
 <section id="services">
     <h2>Услуги</h2>
-    <div class="icons">
-        <div class="icon-box">
-            <span>◻</span>
-            <div class="icon-title">Анимация логотипа</div>
+    <div class="services-row">
+        <div class="service-box">
+            <span>🎨</span>
+            <div class="service-title">Анимация логотипов</div>
         </div>
-        <div class="icon-box">
-            <span>◼</span>
-            <div class="icon-title">Рекламная анимация</div>
+        <div class="service-box">
+            <span>📹</span>
+            <div class="service-title">Рекламная анимация</div>
+            </div>
+        <div class="service-box">
+            <span>🎬</span>
+            <div class="service-title">Профессиональный монтаж</div>
         </div>
-        <div class="icon-box">
-            <span>⬛</span>
-            <div class="icon-title">Видео монтаж</div>
+        <div class="service-box">
+            <span>🖌️</span>
+            <div class="service-title">2D анимация</div>
         </div>
     </div>
 </section>
 
 <section id="works">
     <h2>Работы</h2>
-    <p>Добавляй сюда свои файлы прямо в код:</p>
-
     <div class="gallery">
         <!-- Вставляй сюда свои работы -->
-        <!-- Пример: -->
         <!-- <img src="images/work1.jpg"> -->
         <!-- <video src="video/work.mp4" controls></video> -->
     </div>
@@ -196,9 +250,19 @@ section {
 <section id="about">
     <h2>Обо мне</h2>
     <p>
-        Я — Motion Designer. Создаю эмоциональную визуальную эстетику,
-        минималистичные и премиальные проекты.
+        Я — 2D моушен-дизайнер с опытом работы более двух лет. Работаю в программах 
+        Adobe After Effects, Adobe Illustrator, Adobe Photoshop, Adobe Premiere Pro. 
+        Создаю динамичные и минималистичные анимации для брендов и проектов. 
+        Имею сертификаты об окончании курсов Adobe After Effects Free Step, а также другие сертификаты, которые подтверждают мои навыки.
     </p>
+</section>
+
+<section id="certificates">
+    <h2>Сертификаты</h2>
+    <div class="certificates">
+        <!-- Пример: -->
+        <!-- <div class="certificate-box">Сертификат Adobe After Effects Free Step</div> -->
+    </div>
 </section>
 
 <section id="contact">
@@ -208,7 +272,6 @@ section {
 
 <script>
 const cursor = document.querySelector('.cursor');
-
 document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
