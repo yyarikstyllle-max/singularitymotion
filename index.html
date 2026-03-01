@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Singularity by Motion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #fff;
+      color: #000;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      border-bottom: 1px solid #000;
+    }
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #555;
+    }
+    section {
+      padding: 2rem;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.2rem;
+    }
+    .services li {
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Singularity by Motion</h1>
+  </header>
+  <nav>
+    <a href="#services">Услуги</a>
+    <a href="#about">Обо мне</a>
+  </nav>
+
+  <section id="services" class="services">
+    <h2>Услуги</h2>
+    <ul>
+      <li>2D Motion Designer</li>
+      <li>Анимация логотипов</li>
+      <li>Профессиональный монтаж</li>
+      <li>Рекламные анимации</li>
+      <li>Анимации презентаций к событиям</li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>Обо мне</h2>
+    <p>Здесь мы позже добавим информацию о тебе.</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Singularity by Motion</p>
+  </footer>
+</body>
+</html>
