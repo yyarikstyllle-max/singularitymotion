@@ -1,10 +1,9 @@
-Yarik Stylllerxd, [02.03.2026 01:37]
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Singularity by Emotion</title>
+<title>Singularity by Motion</title>
 
 <!-- Шрифт Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,7 +13,6 @@ Yarik Stylllerxd, [02.03.2026 01:37]
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none;
 }
 
 body {
@@ -24,11 +22,24 @@ body {
     overflow-x: hidden;
 }
 
+/* Курсор */
+.cursor {
+    width: 20px;
+    height: 20px;
+    background: black;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+}
+
+/* Навигация */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 30px 60px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,7 +57,8 @@ nav h1 {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -60,32 +72,38 @@ nav ul li a:hover {
     opacity: 0.5;
 }
 
-.cursor {
-    width: 20px;
-    height: 20px;
-    background: black;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 2000;
-}
-
+/* Hero */
 section {
     min-height: 100vh;
-    padding: 150px 80px;
+    padding: 120px 40px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+.hero {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1.2;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 15px;
+    color: #555;
+}
+
+/* Секции */
 section h2 {
     font-weight: 600;
-    font-size: 36px;
-    margin-bottom: 40px;
+    font-size: 28px;
+    margin-bottom: 30px;
     position: relative;
     display: inline-block;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
 
 section h2::after {
@@ -94,37 +112,40 @@ section h2::after {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 6px;
+    height: 5px;
     background: #eee;
     border-radius: 3px;
-}
-
-/* Hero */
-.hero {
-    font-size: 60px;
-    font-weight: 300;
-    line-height: 1.2;
-    max-width: 900px;
-    margin-bottom: 80px;
 }
 
 /* Услуги */
 .services-row {
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 40px;
+    gap: 20px;
     padding-bottom: 20px;
+    overflow-x: auto;
 }
 
 .service-box {
-    flex: 0 0 300px;
-    padding: 60px;
+    flex: 0 0 250px;
+    padding: 40px;
     background: #f8f8f8;
     border-radius: 20px;
     text-align: center;
     transition: 0.4s;
     position: relative;
+}
+
+.service-box::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 50px;
+    background: #eee;
+    border-radius: 25px;
+    z-index: -1;
 }
 
 .service-box:hover {
@@ -133,9 +154,9 @@ section h2::after {
 }
 
 .service-box span {
-    font-size: 60px;
+    font-size: 50px;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #ccc;
     transition: 0.4s;
 }
@@ -145,29 +166,29 @@ section h2::after {
 }
 
 .service-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
 }
 
 /* Обо мне */
 #about p {
-    font-size: 18px;
-    max-width: 800px;
-    line-height: 1.6;
+    font-size: 16px;
+    max-width: 100%;
+    line-height: 1.5;
     margin-top: 20px;
 }
 
 /* Галерея работ */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: 40px;
-    margin-top: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+    margin-top: 40px;
 }
 
 .gallery img, .gallery video {
     width: 100%;
-    height: 300px;
+    height: 200px;
     object-fit: cover;
     border-radius: 15px;
 }
@@ -175,13 +196,13 @@ section h2::after {
 /* Сертификаты */
 .certificates {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .certificate-box {
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #eee;
     border-radius: 15px;
     background: #f9f9f9;
@@ -192,15 +213,46 @@ section h2::after {
     background: #111;
     color: white;
 }
+
+/* Мобильные адаптации */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+    .hero {
+        font-size: 36px;
+    }
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    .service-box {
+        flex: 0 0 200px;
+        padding: 30px;
+    }
+    .service-box span {
+        font-size: 40px;
+    }
+    section h2 {
+
+Yarik Stylllerxd, [02.03.2026 01:44]
+font-size: 24px;
+    }
+}
 </style>
 </head>
 
 <body>
-
 <div class="cursor"></div>
 
 <nav>
-    <h1>Singularity by Emotion</h1>
+    <h1>Singularity by Motion</h1>
     <ul>
         <li><a href="#about">Обо мне</a></li>
         <li><a href="#services">Услуги</a></li>
@@ -211,8 +263,8 @@ section h2::after {
 </nav>
 
 <section class="hero">
-    Singularity by Emotion — <br>
-    Motion Design & Visual Experience
+    Singularity by Motion
+    <div class="hero-subtitle">2D Motion Design & Visual Experience</div>
 </section>
 
 <section id="services">
@@ -226,15 +278,21 @@ section h2::after {
             <span>📹</span>
             <div class="service-title">Рекламная анимация</div>
         </div>
-
-Yarik Stylllerxd, [02.03.2026 01:37]
-<div class="service-box">
+        <div class="service-box">
             <span>🎬</span>
             <div class="service-title">Профессиональный монтаж</div>
         </div>
         <div class="service-box">
             <span>🖌️</span>
-            <div class="service-title">2D анимация</div>
+            <div class="service-title">Зацикленные анимации</div>
+        </div>
+        <div class="service-box">
+            <span>🖍️</span>
+            <div class="service-title">Создание логотипов</div>
+        </div>
+        <div class="service-box">
+            <span>🎉</span>
+            <div class="service-title">Анимация событий</div>
         </div>
     </div>
 </section>
@@ -250,17 +308,17 @@ Yarik Stylllerxd, [02.03.2026 01:37]
 <section id="about">
     <h2>Обо мне</h2>
     <p>
-        Я — 2D моушен-дизайнер с опытом работы более двух лет. Работаю в программах 
-        Adobe After Effects, Adobe Illustrator, Adobe Photoshop, Adobe Premiere Pro. 
-        Создаю динамичные и минималистичные анимации для брендов и проектов. 
-        Имею сертификаты об окончании курсов Adobe After Effects Free Step, а также другие сертификаты, которые подтверждают мои навыки.
+        Я — 2D motion designer с опытом работы более двух лет. Работаю в Adobe After Effects, Adobe Illustrator, Adobe Photoshop, Adobe Premiere Pro.  
+        Создаю динамичные и минималистичные анимации для брендов и проектов.  
+        Я делаю: зацикленные анимации, анимации логотипов, создание логотипов, монтаж видео, анимации событий, когда что-то происходит.  
+        Имею сертификаты об окончании учебы Adobe After Effects FreelStep и другие подтверждающие навыки.
     </p>
 </section>
 
 <section id="certificates">
     <h2>Сертификаты</h2>
     <div class="certificates">
-        <!-- <div class="certificate-box">Сертификат Adobe After Effects Free Step</div> -->
+        <!-- <div class="certificate-box">Сертификат Adobe After Effects Free L Step</div> -->
     </div>
 </section>
 
@@ -276,6 +334,5 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.top = e.clientY + 'px';
 });
 </script>
-
 </body>
 </html>
