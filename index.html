@@ -1,68 +1,76 @@
-Yarik Stylllerxd, [02.03.2026 02:07]
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Singularity by Motion</title>
-
-<!-- Шрифт Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Poppins', sans-serif; background: #ffffff; color: #111; overflow-x: hidden; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins', sans-serif; background:#ffffff; color:#111; overflow-x:hidden; }
 
 /* Курсор */
-.cursor { width: 20px; height: 20px; background: black; border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 2000; }
+.cursor { width:20px; height:20px; background:black; border-radius:50%; position:fixed; pointer-events:none; transform:translate(-50%,-50%); z-index:2000; }
 
 /* Навигация */
-nav { position: fixed; top: 0; width: 100%; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.95); backdrop-filter: blur(5px); z-index: 1000; }
-nav h1 { font-weight: 600; font-size: 20px; letter-spacing: 2px; }
-nav ul { list-style: none; display: flex; gap: 30px; flex-wrap: wrap; }
-nav ul li a { text-decoration: none; color: #111; font-weight: 400; transition: 0.3s; }
-nav ul li a:hover { opacity: 0.5; }
+nav { position:fixed; top:0; width:100%; padding:20px 40px; display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.95); backdrop-filter:blur(5px); z-index:1000; }
+nav h1 { font-weight:600; font-size:20px; letter-spacing:2px; }
+nav ul { list-style:none; display:flex; gap:30px; flex-wrap:wrap; }
+nav ul li a { text-decoration:none; color:#111; font-weight:400; transition:0.3s; }
+nav ul li a:hover { opacity:0.5; }
 
 /* Hero */
-section { min-height: 100vh; padding: 120px 40px 80px; display: flex; flex-direction: column; justify-content: center; }
-.hero { font-size: 48px; font-weight: 300; line-height: 1.2; max-width: 100%; margin-bottom: 40px; }
-.hero-subtitle { font-size: 20px; font-weight: 400; margin-top: 15px; color: #555; }
+section { min-height:100vh; padding:120px 40px 80px; display:flex; flex-direction:column; justify-content:center; }
+.hero { font-size:48px; font-weight:300; line-height:1.2; max-width:100%; margin-bottom:40px; }
+.hero-subtitle { font-size:20px; font-weight:400; margin-top:15px; color:#555; }
 
-/* Секции */
-section h2 { font-weight: 600; font-size: 28px; margin-bottom: 30px; position: relative; display: inline-block; padding-bottom: 8px; }
-section h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 5px; background: #eee; border-radius: 3px; }
+/* Заголовки секций */
+section h2 { font-weight:600; font-size:28px; margin-bottom:30px; position:relative; display:inline-block; padding-bottom:8px; }
+section h2::after { content:''; position:absolute; left:0; bottom:0; width:100%; height:5px; background:#eee; border-radius:3px; }
 
 /* Услуги */
-.services-row { display: flex; gap: 20px; padding-bottom: 20px; overflow-x: auto; }
-.service-box { flex: 0 0 338px; padding: 40px; background: #f8f8f8; border-radius: 20px; text-align: center; transition: 0.4s; position: relative; }
-.service-box::after { content: ''; position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 80%; height: 50px; background: #eee; border-radius: 25px; z-index: -1; }
-.service-box:hover { background: #111; color: white; }
-.service-box span { font-size: 50px; display: block; margin-bottom: 15px; color: #ccc; transition: 0.4s; }
-.service-box:hover span { color: white; }
-.service-title { font-size: 16px; font-weight: 400; }
-.service-box video { width: 100%; margin-top: 10px; border-radius: 15px; }
+.services-row { display:flex; gap:20px; padding-bottom:20px; overflow-x:auto; }
+.service-box { flex:0 0 338px; padding:40px; background:#f8f8f8; border-radius:20px; text-align:center; transition:0.4s; position:relative; }
+.service-box::after { content:''; position:absolute; bottom:10px; left:50%; transform:translateX(-50%); width:80%; height:50px; background:#eee; border-radius:25px; z-index:-1; }
+.service-box:hover { background:#111; color:white; }
+.service-box span { font-size:50px; display:block; margin-bottom:15px; color:#ccc; transition:0.4s; }
+.service-box:hover span { color:white; }
+.service-title { font-size:16px; font-weight:400; margin-bottom:10px; }
+.service-price { font-size:14px; color:#555; margin-bottom:10px; }
+.service-desc { font-size:14px; color:#777; }
+
+/* Работы */
+#works .buttons { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:20px; }
+#works .buttons button { padding:10px 20px; border:none; border-radius:15px; background:#f0f0f0; cursor:pointer; transition:0.3s; }
+#works .buttons button.active, #works .buttons button:hover { background:#111; color:white; }
+
+/* Модальное окно для видео */
+.modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:3000; }
+.modal-content { max-width:90%; max-height:80%; }
+.modal-content video { width:100%; border-radius:15px; }
 
 /* Обо мне */
-#about p { font-size: 16px; max-width: 100%; line-height: 1.5; margin-top: 20px; }
+#about p { font-size:16px; max-width:100%; line-height:1.5; margin-top:20px; }
 
-/* Галерея работ */
-.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 20px; margin-top: 40px; }
-.gallery img, .gallery video { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; }
+/* Галерея */
+.gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
 
 /* Сертификаты */
-.certificates { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 20px; margin-top: 30px; }
-.certificate-box { padding: 15px; border: 1px solid #eee; border-radius: 15px; background: #f9f9f9; transition: 0.3s; }
-.certificate-box:hover { background: #111; color: white; }
+.certificates { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-top:30px; }
+.certificate-box { padding:15px; border:1px solid #eee; border-radius:15px; background:#f9f9f9; transition:0.3s; }
+.certificate-box:hover { background:#111; color:white; }
 
 /* Мобильные адаптации */
-@media (max-width: 768px) {
-    nav { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
-    nav ul { gap: 15px; flex-wrap: wrap; margin-top: 10px; }
-    .hero { font-size: 36px; }
-    .hero-subtitle { font-size: 18px; }
-    .service-box { flex: 0 0 300px; padding: 30px; } /* оставляем большой блок */
-    .service-box span { font-size: 50px; } /* иконка не уменьшаем */
-    section h2 { font-size: 24px; }
+@media (max-width:768px) {
+    nav { flex-direction:column; align-items:flex-start; padding:15px 20px; }
+    nav ul { gap:15px; flex-wrap:wrap; margin-top:10px; }
+    .hero { font-size:36px; }
+    .hero-subtitle { font-size:18px; }
+    .service-box { flex:0 0 300px; padding:30px; }
+    .service-box span { font-size:50px; }
+    section h2 { font-size:24px; }
 }
 </style>
 </head>
@@ -73,7 +81,8 @@ section h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 
 <nav>
     <h1>Singularity by Motion</h1>
     <ul>
-        <li><a href="#about">Обо мне</a></li>
+
+<li><a href="#about">Обо мне</a></li>
         <li><a href="#services">Услуги</a></li>
         <li><a href="#works">Работы</a></li>
         <li><a href="#certificates">Сертификаты</a></li>
@@ -83,58 +92,59 @@ section h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 
 
 <section class="hero">
     Singularity by Motion
-
-Yarik Stylllerxd, [02.03.2026 02:07]
-<div class="hero-subtitle">2D Motion Design & Visual Experience</div>
+    <div class="hero-subtitle">2D Motion Design & Visual Experience</div>
 </section>
 
 <section id="services">
     <h2>Услуги</h2>
     <div class="services-row">
-
-        <div class="service-box">
-            <span>📹</span>
-            <div class="service-title">Рекламная анимация</div>
-        </div>
-
-        <div class="service-box">
-            <span>🎬</span>
-            <div class="service-title">Профессиональный монтаж</div>
-        </div>
-
-        <div class="service-box">
-            <span>🖌️</span>
-            <div class="service-title">Зацикленные анимации</div>
-        </div>
-
-        <!-- Анимация логотипов с видео -->
         <div class="service-box">
             <span>🎨</span>
             <div class="service-title">Анимация логотипов</div>
-            <video src="video/IMG_7327.mp4" controls></video>
-            <video src="video/IMG_8305.mp4" controls></video>
-            <video src="video/IMG_8696.mp4" controls></video>
-            <video src="video/IMG_8697.mp4" controls></video>
-            <video src="video/IMG_8698.mp4" controls></video>
+            <div class="service-price">от $50</div>
+            <div class="service-desc">Создание логотипов и анимаций для брендов</div>
         </div>
-
+        <div class="service-box">
+            <span>🖌️</span>
+            <div class="service-title">Зацикленные анимации</div>
+            <div class="service-price">от $40</div>
+            <div class="service-desc">Луп-анимации для видео и соцсетей</div>
+        </div>
+        <div class="service-box">
+            <span>🎬</span>
+            <div class="service-title">Профессиональный монтаж</div>
+            <div class="service-price">от $60</div>
+            <div class="service-desc">Монтаж видео для рекламы и проектов</div>
+        </div>
+        <div class="service-box">
+            <span>📹</span>
+            <div class="service-title">Рекламная анимация</div>
+            <div class="service-price">от $70</div>
+            <div class="service-desc">Создание рекламных видеороликов</div>
+        </div>
     </div>
 </section>
 
 <section id="works">
     <h2>Работы</h2>
-    <div class="gallery">
-        <!-- Другие работы можно добавить здесь -->
+    <div class="buttons">
+        <button class="active" data-video="video/IMG_7327.mp4">Анимация логотипов</button>
     </div>
 </section>
+
+<!-- Модальное окно -->
+<div class="modal" id="videoModal">
+    <div class="modal-content">
+        <video id="modalVideo" src="" controls autoplay></video>
+    </div>
+</div>
 
 <section id="about">
     <h2>Обо мне</h2>
     <p>
-        Я — 2D motion designer с опытом работы более двух лет. Работаю в Adobe After Effects, Adobe Illustrator, Adobe Photoshop, Adobe Premiere Pro.  
+        Я — 2D motion designer с опытом работы более двух лет. Работаю в Adobe After Effects, Illustrator, Photoshop, Premiere Pro.  
         Создаю динамичные и минималистичные анимации для брендов и проектов.  
-        Я делаю: зацикленные анимации, анимации логотипов, создание логотипов, монтаж видео, анимации событий.  
-        Имею сертификаты об окончании учебы Adobe After Effects Free L Step и другие подтверждающие навыки.
+        Я делаю: зацикленные анимации, анимации логотипов, создание логотипов, монтаж видео, анимации событий.
     </p>
 </section>
 
@@ -151,10 +161,31 @@ Yarik Stylllerxd, [02.03.2026 02:07]
 </section>
 
 <script>
+/* Курсор */
 const cursor = document.querySelector('.cursor');
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+document.addEventListener('mousemove',(e)=>{
+    cursor.style.left = e.clientX+'px';
+    cursor.style.top = e.clientY+'px';
+});
+
+/* Модальное видео */
+const buttons = document.querySelectorAll('#works .buttons button');
+const modal = document.getElementById('videoModal');
+const modalVideo = document.getElementById('modalVideo');
+
+buttons.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        modal.style.display='flex';
+        modalVideo.src=btn.dataset.video;
+        modalVideo.play();
+    });
+});
+
+/* Закрытие модального окна */
+modal.addEventListener('click',()=>{
+    modal.style.display='none';
+    modalVideo.pause();
+    modalVideo.src='';
 });
 </script>
 </body>
