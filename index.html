@@ -43,125 +43,15 @@ section h2::after { content:''; position:absolute; left:50%; transform:translate
 .service-desc { font-size:14px; color:#777; }
 
 /* Работы */
-    <section id="works">
-    <h2>Работы</h2>
+#works .buttons { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:20px; justify-content:center; }
+#works .buttons button { padding:15px 40px; border:none; border-radius:25px; background:#111; color:white; font-size:22px; cursor:pointer; transition:0.4s; }
+#works .buttons button.active, #works .buttons button:hover { background:#333; }
 
-    <!-- Большая кнопка -->
-    <div class="buttons">
-        <button id="logoBtn" class="active">Анимация логотипов</button>
-    </div>
-
-    <!-- Активное окно для видео -->
-    <div class="video-container" id="videoContainer">
-        <div class="video-box">
-            <video src="IMG_7327.mp4" controls></video>
-            <p>Анимация логотипов для брендов</p>
-        </div>
-        <div class="video-box">
-            <video src="IMG_8305.mp4" controls></video>
-            <p>Анимация логотипов для брендов</p>
-        </div>
-        <div class="video-box">
-            <video src="IMG_8696.mp4" controls></video>
-            <p>Анимация логотипов для брендов</p>
-        </div>
-        <div class="video-box">
-            <video src="IMG_8697.mp4" controls></video>
-            <p>Анимация логотипов для брендов</p>
-        </div>
-        <div class="video-box">
-            <video src="IMG_8698.mp4" controls></video>
-            <p>Анимация логотипов для брендов</p>
-        </div>
-    </div>
-</section>
-
-<style>
-/* Кнопка */
-#logoBtn {
-    font-size:22px;
-    padding:15px 40px;
-    border:none;
-    border-radius:25px;
-    background:#111;
-    color:white;
-    cursor:pointer;
-    transition:0.4s;
-    display:block;
-    margin:0 auto;
-}
-#logoBtn:hover {
-    background:#333;
-}
-
-/* Видео контейнер */
-.video-container {
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-    justify-content:center;
-    margin-top:20px;
-    opacity:0;
-    max-height:0;
-    overflow:hidden;
-    transition:all 0.5s ease;
-}
-
-/* Когда активное окно открыто */
-.video-container.active {
-    opacity:1;
-    max-height:2000px; /* достаточно для всех видео */
-}
-
-.video-box {
-    flex:0 0 338px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-.video-box video {
-    width:100%;
-    border-radius:15px;
-}
-.video-box p {
-    margin-top:10px;
-    font-size:14px;
-    color:#555;
-    text-align:center;
-}
-</style>
-
-<script>
-// Анимация кнопки и открытие видео
-const logoBtn = document.getElementById('logoBtn');
-const videoContainer = document.getElementById('videoContainer');
-
-logoBtn.addEventListener('click', ()=>{
-    videoContainer.classList.toggle('active'); // открываем или закрываем окно с видео
-});
-</script>
-    <div class="video-container" id="videoContainer">
-    <div class="video-box">
-        <video src="IMG_7327.mp4" controls></video>
-        <p>Анимация логотипов для брендов</p>
-    </div>
-    <div class="video-box">
-        <video src="IMG_8305.mp4" controls></video>
-        <p>Анимация логотипов для брендов</p>
-    </div>
-    <div class="video-box">
-        <video src="IMG_8696.mp4" controls></video>
-        <p>Анимация логотипов для брендов</p>
-    </div>
-    <div class="video-box">
-        <video src="IMG_8697.mp4" controls></video>
-        <p>Анимация логотипов для брендов</p>
-    </div>
-    <div class="video-box">
-        <video src="IMG_8698.mp4" controls></video>
-        <p>Анимация логотипов для брендов</p>
-    </div>
-</div>
+.video-container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:20px; opacity:0; max-height:0; overflow:hidden; transition:all 0.5s ease; }
+.video-container.active { opacity:1; max-height:2000px; }
+.video-box { flex:0 0 338px; display:flex; flex-direction:column; align-items:center; }
+.video-box video { width:100%; border-radius:15px; }
+.video-box p { margin-top:10px; font-size:14px; color:#555; text-align:center; }
 
 /* Обо мне */
 #about p { font-size:16px; max-width:100%; line-height:1.5; margin-top:20px; text-align:center; }
@@ -175,13 +65,13 @@ logoBtn.addEventListener('click', ()=>{
 @media (max-width:768px) {
     nav { flex-direction:column; align-items:flex-start; padding:15px 20px; }
     nav ul { gap:15px; flex-wrap:wrap; margin-top:10px; }
-    .hero { font-size:36px; }
-    .hero-subtitle { font-size:18px; }
-    .service-box { flex:0 0 300px; padding:30px; }
     .
 
 
-service-box span { font-size:50px; }
+hero { font-size:36px; }
+    .hero-subtitle { font-size:18px; }
+    .service-box { flex:0 0 300px; padding:30px; }
+    .service-box span { font-size:50px; }
     section h2 { font-size:24px; }
     .video-box { flex:0 0 300px; }
 }
@@ -239,30 +129,11 @@ service-box span { font-size:50px; }
 <section id="works">
     <h2>Работы</h2>
     <div class="buttons">
-        <button class="active" data-category="logo">Анимация логотипов</button>
+        <button id="logoBtn" class="active">Анимация логотипов</button>
     </div>
 
     <div class="video-container" id="videoContainer">
-        <div class="video-box">
-            <video src="video/IMG_7327.mp4" controls></video>
-            <p>Анимация логотипов для брендов</p>
-        </div>
-        <div class="video-box">
-            <video src="video/IMG_8305.mp4" controls></video>
-            <p>Анимация логотипов для брендов</p>
-        </div>
-        <div class="video-box">
-            <video src="video/IMG_8696.mp4" controls></video>
-            <p>Анимация логотипов для брендов</p>
-        </div>
-        <div class="video-box">
-            <video src="video/IMG_8697.mp4" controls></video>
-            <p>Анимация логотипов для брендов</p>
-        </div>
-        <div class="video-box">
-            <video src="video/IMG_8698.mp4" controls></video>
-            <p>Анимация логотипов для брендов</p>
-        </div>
+        <!-- Видео сюда добавляем отдельно -->
     </div>
 </section>
 
@@ -302,20 +173,12 @@ window.addEventListener('scroll',()=>{
     }
 });
 
-/* Видео категории */
-const buttons = document.querySelectorAll('#works .buttons button');
+/* Видео кнопка Анимация логотипов */
+const logoBtn = document.getElementById('logoBtn');
 const videoContainer = document.getElementById('videoContainer');
 
-buttons.forEach(btn=>{
-    btn.addEventListener('click',()=>{
-        buttons.
-
-
-forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        const videos = videoContainer.querySelectorAll('.video-box');
-        videos.forEach(v=>v.style.display='flex'); // показываем все видео
-    });
+logoBtn.addEventListener('click', ()=>{
+    videoContainer.classList.toggle('active');
 });
 </script>
 </body>
